@@ -1,13 +1,13 @@
-package sort
+package sort_test
 
 import (
+	"../sort"
 	"fmt"
 	"math/rand"
-	_ "sort"
 	"testing"
 )
 
-var n int = 10
+var n int = 100
 
 type IntS []int
 
@@ -22,25 +22,25 @@ func init() {
 	for i := 0; i < n; i++ {
 		ints = append(ints, rand.Intn(n))
 	}
-	fmt.Println(n)
 }
 
 func TestInsertionSort(t *testing.T) {
 	d := IntS(ints[0:])
 	fmt.Println(d)
-	Sort(d, "insertion")
+	sort.Sort(d, "insertion")
 	fmt.Println(ints)
 }
 
 func TestQuickSort(t *testing.T) {
 	d := IntS(ints[0:])
-	Sort(d, "quick")
+	fmt.Println(d)
+	sort.Sort(d, "quick")
+	fmt.Println(ints)
 }
 
 func TestBubbleSort(t *testing.T) {
-	//ints := []int{3, 4, 7, 5, 6, 2, 8, 1}
 	d := IntS(ints[0:])
 	fmt.Println(d)
-	Sort(d, "bubble")
+	sort.Sort(d, "bubble")
 	fmt.Println(ints)
 }

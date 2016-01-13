@@ -4,13 +4,13 @@ import (
 	_ "fmt"
 )
 
-type Interface interface {
+type SortI interface {
 	Less(i, j int) bool
 	Swap(i, j int)
 	Len() int
 }
 
-func insertionSort(data Interface, a, b int) {
+func insertionSort(data SortI, a, b int) {
 	for i := a + 1; i < b; i++ {
 		for j := i; j > a && data.Less(j, j-1); j-- {
 			data.Swap(j, j-1)
@@ -18,7 +18,7 @@ func insertionSort(data Interface, a, b int) {
 	}
 }
 
-func quickSort(d Interface, a, b int) {
+func quickSort(d SortI, a, b int) {
 	if a >= b {
 		return
 	}
@@ -55,10 +55,10 @@ func quickSort(d Interface, a, b int) {
 	quickSort(d, p+1, b)
 }
 
-func bubbleSort(data Interface) {
+func bubbleSort(data SortI) {
 	n := data.Len()
 	for i := 0; i < n-1; i++ {
-		for j := 0; j < n-1; j++ {
+		for j := 0; j < n-1-i; j++ {
 			if !data.Less(j, j+1) {
 				data.Swap(j, j+1)
 			}
@@ -66,7 +66,7 @@ func bubbleSort(data Interface) {
 	}
 }
 
-func Sort(data Interface, t string) {
+func Sort(data SortI, t string) {
 	if t == "insertion" {
 		insertionSort(data, 0, data.Len())
 	} else if t == "quick" {
