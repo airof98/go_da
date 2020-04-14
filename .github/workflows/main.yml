@@ -32,3 +32,7 @@ jobs:
         echo Add other actions to build,
         echo test, and deploy your project.
         echo ${GITHUB_REF#refs/heads/}
+        if [ ${GITHUB_REF#refs/heads/} == "master" ];
+        then
+          echo ${GITHUB_REF}
+        fi
