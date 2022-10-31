@@ -1,9 +1,5 @@
 package sort
 
-import (
-	_ "fmt"
-)
-
 type SortI interface {
 	Less(i, j int) bool
 	Swap(i, j int)

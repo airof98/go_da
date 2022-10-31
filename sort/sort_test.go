@@ -1,7 +1,6 @@
-package sort_test
+package sort
 
 import (
-	"../sort"
 	"fmt"
 	"math/rand"
 	"testing"
@@ -27,20 +26,20 @@ func init() {
 func TestInsertionSort(t *testing.T) {
 	d := IntS(ints[0:])
 	fmt.Println(d)
-	sort.Sort(d, "insertion")
+	Sort(d, "insertion")
 	fmt.Println(ints)
 }
 
 func TestQuickSort(t *testing.T) {
 	d := IntS(ints[0:])
 	fmt.Println(d)
-	sort.Sort(d, "quick")
+	Sort(d, "quick")
 	fmt.Println(ints)
 }
 
 func TestBubbleSort(t *testing.T) {
 	d := IntS(ints[0:])
 	fmt.Println(d)
-	sort.Sort(d, "bubble")
+	Sort(d, "bubble")
 	fmt.Println(ints)
 }

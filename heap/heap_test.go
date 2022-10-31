@@ -1,7 +1,7 @@
 package heap
 
 import (
-	"../heap"
+	"container/heap"
 	"fmt"
 	"testing"
 )

@@ -1,13 +1,12 @@
 package list
 
 import (
-	"../list"
 	"fmt"
 	"testing"
 )
 
 func TestList(t *testing.T) {
-	l := list.New()
+	l := New()
 	l.PushBack(100)
 	l.PushBack(200)
 	l.PushBack("test")

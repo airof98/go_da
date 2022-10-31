@@ -1,9 +1,5 @@
 package ring
 
-import (
-	_ "fmt"
-)
-
 type Ring struct {
 	next, prev *Ring
 	Value      interface{}
